@@ -1,0 +1,59 @@
+<script>console.log("hello")
+    let rpc;
+
+function getComputerChoice() {
+    let kakka = Math.floor(Math.random() * 3) + 1;
+    
+    if (kakka === 1){
+        rpc = "Rock"
+    }
+    else if (kakka === 2){
+        rpc = "Paper"
+    }
+    else {
+        rpc = "Scissors"
+    }
+}
+function playRound() {
+    getComputerChoice();
+    console.log(rpc)
+    let tulos;
+    let hc = prompt("Rock, paper or scissors");
+    if (rpc === hc) {
+        tulos = "It's a tie!"
+        console.log(tulos)
+        playRound();
+    }
+    else if (hc === "Rock" && rpc === "Paper") {
+        tulos = "You lose! " + rpc + " beats " + hc;
+        console.log(tulos)
+    }
+    else if (hc === "Rock" && rpc === "Scissors") {
+        tulos = "You win! " + hc + " beats " + rpc;
+        console.log(tulos)
+    }
+    else if (hc=== "Paper"&& rpc === "Rock") {
+        tulos = "You win! " + hc + " beats " + rpc;
+        console.log(tulos)
+    }
+    else if (hc === "Paper"&& rpc === "Scissors") {
+        tulos = "You lose! " + rpc + " beats " + hc;
+        console.log(tulos)
+    }
+    else if (hc === "Scissors" && rpc === "Paper") {
+        tulos = "You win! " + hc + " beats " + rpc;
+        console.log(tulos)
+    }
+    else if (hc === "Scissors"&& rpc === "Rock") {
+        tulos = "You lose! " + rpc + " beats " + hc;
+        console.log(tulos)
+    }
+    else {
+        tulos = "enter rock, paper, scissors"
+        console.log(tulos)
+    } }
+    const  hc = "rock";
+    const computerSelection = getComputerChoice();
+    console.log(playRound(hc, computerSelection));
+    
+</script>
