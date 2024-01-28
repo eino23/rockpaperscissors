@@ -2,12 +2,12 @@
     let computerChoice;
 
 function getComputerChoice() {
-    let kakka = Math.floor(Math.random() * 3) + 1;
+    let roPaSc = Math.floor(Math.random() * 3) + 1;
     
-    if (kakka === 1){
+    if (roPaSc === 1){
         computerChoice = "Rock"
     }
-    else if (kakka === 2){
+    else if (roPaSc === 2){
         computerChoice = "Paper"
     }
     else {
@@ -15,7 +15,33 @@ function getComputerChoice() {
     }
     console.log(computerChoice);
 }
-getComputerChoice();
-
+function playRound(playerSelection, computerChoice){
+    getComputerChoice();
+    if (playerSelection === computerChoice){
+        return "It's a tie! Re-playing round"
+        playRound();
+    }
+    else if (playerSelection === "Rock" && computerChoice === "Paper"){
+        return "You lose! " + computerChoice + " beats " + playerSelection;
+    }
+    else if (playerSelection === "Rock" && computerChoice === "Scissors"){
+        return "You win! " + computerChoice + " wins " + playerSelection;
+    }
+    else if (playerSelection === "Paper" && computerChoice === "Scissors"){
+        return "You lose! " + computerChoice + " beats " + playerSelection;
+    }
+    else if (playerSelection === "Paper" && computerChoice === "Rock"){
+        return "You win! " + computerChoice + " beats " + playerSelection;
+    }
+    else if (playerSelection === "Scissors" && computerChoice === "Rock"){
+        return "You lose! " + computerChoice + " beats " + playerSelection;
+    }
+    else if (playerSelection === "Scissors" && computerChoice === "Paper"){
+        return "You win! " + computerChoice + " beats " + playerSelection;
+    }
+}
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 
 </script>
