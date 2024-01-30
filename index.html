@@ -13,13 +13,15 @@ function getComputerChoice() {
     else {
         computerChoice = "Scissors"
     }
-    console.log(computerChoice);
+    console.log("computer has chosen: " + computerChoice);
 }
+let playerSelection;
 function playRound(playerSelection, computerChoice){
     getComputerChoice();
+    playerSelection = "Rock"
+    console.log(playerSelection)
     if (playerSelection === computerChoice){
-        return "It's a tie! Re-playing round"
-        playRound();
+        return "It's a tie! Re-playing round";
     }
     else if (playerSelection === "Rock" && computerChoice === "Paper"){
         return "You lose! " + computerChoice + " beats " + playerSelection;
@@ -40,8 +42,5 @@ function playRound(playerSelection, computerChoice){
         return "You win! " + computerChoice + " beats " + playerSelection;
     }
 }
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
-
+ playRound();
 </script>
