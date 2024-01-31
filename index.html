@@ -1,5 +1,6 @@
 <script>
     let computerChoice;
+    let playerSelection;
 
 function getComputerChoice() {
     let roPaSc = Math.floor(Math.random() * 3) + 1;
@@ -15,32 +16,47 @@ function getComputerChoice() {
     }
     console.log("computer has chosen: " + computerChoice);
 }
-let playerSelection;
+ let botScore;
+ let humanScore;
 function playRound(playerSelection, computerChoice){
     getComputerChoice();
-    playerSelection = "Rock"
-    console.log(playerSelection)
     if (playerSelection === computerChoice){
-        return "It's a tie! Re-playing round";
+        return "Its a tie"
     }
     else if (playerSelection === "Rock" && computerChoice === "Paper"){
+        botScore = 1++;
         return "You lose! " + computerChoice + " beats " + playerSelection;
     }
     else if (playerSelection === "Rock" && computerChoice === "Scissors"){
-        return "You win! " + computerChoice + " wins " + playerSelection;
+        let humanScore = 1++;
+        return "You win! " + playerSelection + " wins " + computerChoice;
     }
     else if (playerSelection === "Paper" && computerChoice === "Scissors"){
+        let botScore = 1++;
         return "You lose! " + computerChoice + " beats " + playerSelection;
     }
     else if (playerSelection === "Paper" && computerChoice === "Rock"){
-        return "You win! " + computerChoice + " beats " + playerSelection;
+        let humanScore = 1++;
+        return "You win! " + playerSelection + " beats " + computerChoice;
     }
     else if (playerSelection === "Scissors" && computerChoice === "Rock"){
+        let botScore = 1++;
         return "You lose! " + computerChoice + " beats " + playerSelection;
     }
     else if (playerSelection === "Scissors" && computerChoice === "Paper"){
-        return "You win! " + computerChoice + " beats " + playerSelection;
+        let humanScore = 1++;
+        return "You win! " + playerSelection + " beats " + computerChoice;
     }
 }
- playRound();
+ function playGame(){
+    for (let i = 0; i <= 5; i++ ) {
+        playerSelection = prompt("question")
+        console.log(playRound(playerSelection, computerChoice));
+    }
+    if (humanScore > botScore){
+        console.log("You win!" + humanScore + " - " + botScore)
+    }
+ }
+ playGame();
+ 
 </script>
