@@ -23,27 +23,27 @@ function playRound(playerSelection, computerChoice){
         return "Its a tie";
         
     }
-    else if (playerSelection === "rock" && computerChoice === "Paper"){
+    else if (playerSelection === "rock" && computerChoice === "paper"){
         botScore++;
         return "You lose! " + computerChoice + " beats " + playerSelection;
     }
-    else if (playerSelection === "rock" && computerChoice === "Scissors"){
+    else if (playerSelection === "rock" && computerChoice === "scissors"){
         humanScore++;
         return "You win! " + playerSelection + " wins " + computerChoice;
     }
-    else if (playerSelection === "paper" && computerChoice === "Scissors"){
+    else if (playerSelection === "paper" && computerChoice === "scissors"){
         botScore++;
         return "You lose! " + computerChoice + " beats " + playerSelection;
     }
-    else if (playerSelection === "paper" && computerChoice === "Rock"){
+    else if (playerSelection === "paper" && computerChoice === "rock"){
         humanScore++;
         return "You win! " + playerSelection + " beats " + computerChoice;
     }
-    else if (playerSelection === "scissors" && computerChoice === "Rock"){
+    else if (playerSelection === "scissors" && computerChoice === "rock"){
         botScore++;
         return "You lose! " + computerChoice + " beats " + playerSelection;
     }
-    else if (playerSelection === "scissors" && computerChoice === "Paper"){
+    else if (playerSelection === "scissors" && computerChoice === "paper"){
         humanScore++;
         return "You win! " + playerSelection + " beats " + computerChoice;
     }
